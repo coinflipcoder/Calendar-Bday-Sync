@@ -26,4 +26,4 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker pushghcr.io/coinflipcoder/calendar_bday_sync:latest
+          docker push ghcr.io/coinflipcoder/calendar_bday_sync:latest
