@@ -156,10 +156,13 @@ def main():
         years=int(args.years) if args.years is not None else 2,
         show_skipped=show_skipped
     )
+
     print("\nAll contacts processed. Deleting all current events...")
     delete_calendar_events(args.calendar_url, args.user, args.password, dry_run=dry_run)
+
     print("\nAll events deleted. Uploading new events...")
     upload_events(calendar, args.calendar_url, args.user, args.password, dry_run=dry_run)
+
     print("\nAll done.")
 
     if dry_run:
