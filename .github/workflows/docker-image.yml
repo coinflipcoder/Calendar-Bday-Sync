@@ -1,33 +1,29 @@
-name: Docker Image CI
+name: Build and Push Docker Image
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main  # Trigger on pushes to the main branch
 
 jobs:
-  docker:
+  build-and-push:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
-        
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-        
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-      
-      - name: Login to ghcr.io
-        uses: docker/login-action@v1
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          platforms: linux/amd64,linux/arm64
-          tags: ghcr.io/adi146/contacts_bday_calendar:latest
-          push: true
+      - name: Build Docker image
+        run: |
+          docker build -t ghcr.io/coinflipcoder/calendar_bday_sync:latest .
+
+      - name: Push Docker image
+        run: |
+          docker pushghcr.io/coinflipcoder/calendar_bday_sync:latest
