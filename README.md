@@ -24,5 +24,5 @@ docker run ghcr.io/coinflipcoder/calendar_bday_sync:latest --contacts_url https:
 ```
 Or with environment variables
 ```
-docker run --env WEBDAV_CONTACTS_URL=https://HOST/remote.php/dav/addressbooks/users/USER/contacts/ --env WEBDAV_CALENDAR_URL=https://HOST/remote.php/dav/calendars/USER/CALENDAR/ --env WEBDAV_USER=USER --env WEBDAV_PASSWORD=PASSWORD ghcr.io/coinflipcoder/calendar_bday_sync:latest
+docker run --env CONTACTS_URL=https://HOST/remote.php/dav/addressbooks/users/USER/contacts/ --env CALENDAR_URL=https://HOST/remote.php/dav/calendars/USER/CALENDAR/ --env USER=USER --env PASSWORD=PASSWORD ghcr.io/coinflipcoder/calendar_bday_sync:latest
 ```
