@@ -6,13 +6,17 @@ This is a simple script to add birthday events of your carddav contacts to your 
 
 ### Command Line
 
-#### Nextcloud
+#### Nextcloud (untested)
 ```
 python birthday_calendar.py --contacts_url https://HOST/remote.php/dav/addressbooks/users/USER/contacts/ --calendar_url https://HOST/remote.php/dav/calendars/USER/CALENDAR/ --user USER --password PASSWORD
 ```
-#### Radicale
+#### Radicale (untested)
 ```
 python birthday_calendar.py --contacts_url https://HOST/USER/ADDRESSBOOK-UID/ --calendar_url https://HOST/USER/CALENDAR-UID/ --user USER --password PASSWORD
+```
+#### Baikal
+```
+python birthday_calendar.py --contacts_url https://HOST/dav.php/addressbooks/USER/ADDRESSBOOK/ --calendar_url https://HOST/dav.php/calendars/USER/CALENDAR/ --user USER --password PASSWORD
 ```
 
 ### Docker
