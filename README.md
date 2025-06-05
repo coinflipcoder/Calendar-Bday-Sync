@@ -1,4 +1,4 @@
-# ContactsBDayCalendar
+# Calendar Bday Sync
 
 This is a simple script to add birthday events of your carddav contacts to your caldav calendar.
 
