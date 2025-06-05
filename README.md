@@ -2,6 +2,17 @@
 
 This is a simple script to add birthday events of your carddav contacts to your caldav calendar.
 
+## Variables
+| Variable     | Description                                    | Required | Default |
+|--------------|------------------------------------------------|----------|---------|
+| CONTACTS_URL | The URL to your CardDAV contacts address book. | Yes      | None    |
+| CALENDAR_URL | The URL to your CalDAV calendar.               | Yes      | None    |
+| USER         | Your username for CardDAV and CalDAV.          | Yes      | None    |
+| PASSWORD     | Your password for CardDAV and CalDAV.          | Yes      | None    |
+| YEARS        | How many years should be generated.            | No       | 2       |
+| SHOW_SKIPPED | If the log should include skipped contacts.    | No       | false   |
+| DRY_RUN      | Does not make any changes.                     | No       | false   |
+
 ## Usage
 
 ### Command Line
